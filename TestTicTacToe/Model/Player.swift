@@ -10,8 +10,6 @@ import Foundation
 struct Player{
     
     var name: String
-   
-    var currentPlayer: Int
     
     var score: Int
     

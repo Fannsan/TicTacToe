@@ -13,10 +13,29 @@ class Game{
     
     private var board = [0,0,0,0,0,0,0,0,0]
     
+    var currentPlayer = 1
     
     init(){
+        
         self.players = []
+        
     }
+    
+    
+    func switchPlayer(index: Int) {
+        
+        
+        if currentPlayer == 1{
+            currentPlayer = 2
+        }else {
+            currentPlayer = 1
+        }
+    
+    }
+    
+    
+    
+    
     
     
     
