@@ -33,8 +33,21 @@ class Game{
     
     }
     
+    func addPlayer(newPlayer: Player){
+        
+        //get the name from the view and add in to the array of players
+        players.append(newPlayer)
+        
+       
+    }
     
     
+    
+    func printPlayers() {
+        for player in players {
+            print(player.name)
+        }
+    }
     
     
     

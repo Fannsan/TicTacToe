@@ -11,7 +11,13 @@ struct Player{
     
     var name: String
     
-    var score: Int
+    var score: Int?
     
-    var currentWinner: Bool
+
+    init(name: String, score: Int? = nil) {
+        self.name = name
+        self.score = score
+    }
 }
+
+

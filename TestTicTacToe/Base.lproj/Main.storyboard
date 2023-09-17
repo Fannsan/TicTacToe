@@ -65,7 +65,8 @@
                                     <color key="baseBackgroundColor" red="0.94265545620000002" green="0.55075643379999994" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="dI6-C0-WXC" kind="show" id="3Fy-qt-FnM"/>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NNW-nf-qWg"/>
+                                    <segue destination="dI6-C0-WXC" kind="show" identifier="segueStartGame" id="3Fy-qt-FnM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -101,7 +102,6 @@
                         <outlet property="btnStartGame" destination="Sj6-E9-pI2" id="QvX-zD-CZA"/>
                         <outlet property="txtPlayer1" destination="cBt-Bb-Htm" id="gpL-0x-VnU"/>
                         <outlet property="txtPlayer2" destination="Ezp-wL-75j" id="7Pw-xZ-FjU"/>
-                        <segue destination="dI6-C0-WXC" kind="show" id="rpQ-kA-xvq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -176,7 +176,6 @@
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="KmB-vO-uIV"/>
-                                    <constraint firstAttribute="width" constant="96" id="jgs-jJ-YKB"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="L2H-Jp-Rmo" appends="YES" id="SBL-uj-WQq"/>
@@ -258,8 +257,6 @@
                             <constraint firstItem="96n-Pf-fDn" firstAttribute="top" secondItem="852-l5-jso" secondAttribute="bottom" constant="44" id="CUl-J8-rFC"/>
                             <constraint firstItem="a7Y-eX-YOo" firstAttribute="top" secondItem="FM0-se-F4R" secondAttribute="bottom" constant="106" id="ICT-Ta-KaN"/>
                             <constraint firstItem="HPw-wf-RqB" firstAttribute="leading" secondItem="Okb-nz-otE" secondAttribute="leading" constant="47" id="Lwa-YK-V85"/>
-                            <constraint firstItem="2fj-x0-4W4" firstAttribute="centerX" secondItem="In0-1X-7fH" secondAttribute="centerX" id="RBi-41-zk2"/>
-                            <constraint firstItem="852-l5-jso" firstAttribute="leading" secondItem="Okb-nz-otE" secondAttribute="leading" constant="168" id="XOc-rL-Xci"/>
                             <constraint firstItem="a7Y-eX-YOo" firstAttribute="leading" secondItem="Okb-nz-otE" secondAttribute="leading" constant="169" id="YgG-db-ubX"/>
                             <constraint firstItem="Okb-nz-otE" firstAttribute="bottom" secondItem="vRr-7m-iki" secondAttribute="bottom" constant="269" id="Yh3-p9-tAP"/>
                             <constraint firstItem="Okb-nz-otE" firstAttribute="trailing" secondItem="6yI-gW-Pac" secondAttribute="trailing" constant="47" id="Z1x-fR-GTM"/>
@@ -269,7 +266,6 @@
                             <constraint firstItem="lVA-Ie-1jZ" firstAttribute="leading" secondItem="Okb-nz-otE" secondAttribute="leading" constant="47" id="eKd-Db-5aO"/>
                             <constraint firstItem="vRr-7m-iki" firstAttribute="leading" secondItem="FM0-se-F4R" secondAttribute="trailing" constant="4.3300000000000001" id="hW7-YZ-VAJ"/>
                             <constraint firstItem="HPw-wf-RqB" firstAttribute="top" secondItem="MXv-Mc-Znr" secondAttribute="bottom" constant="86" id="kER-sN-fMt"/>
-                            <constraint firstItem="Okb-nz-otE" firstAttribute="trailing" secondItem="852-l5-jso" secondAttribute="trailing" constant="168" id="lXr-Tm-Chx"/>
                             <constraint firstItem="852-l5-jso" firstAttribute="centerX" secondItem="In0-1X-7fH" secondAttribute="centerX" id="m46-tW-dNS"/>
                             <constraint firstItem="6yI-gW-Pac" firstAttribute="leading" secondItem="2fj-x0-4W4" secondAttribute="trailing" constant="4" id="oGo-1F-5iF"/>
                             <constraint firstItem="Okb-nz-otE" firstAttribute="bottom" secondItem="a7Y-eX-YOo" secondAttribute="bottom" constant="139" id="oji-qO-SWv"/>
@@ -353,9 +349,6 @@
             <point key="canvasLocation" x="96.946564885496173" y="-27.464788732394368"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="rpQ-kA-xvq"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
