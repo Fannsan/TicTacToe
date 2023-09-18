@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yFv-BM-yLY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981" y="-27"/>
+            <point key="canvasLocation" x="2834.3511450381679" y="-27.464788732394368"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="wZU-SA-9ZR">
@@ -134,9 +134,13 @@
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ultimate-tic-tac-toe12-01" translatesAutoresizingMaskIntoConstraints="NO" id="IWv-MF-hat">
+                                <rect key="frame" x="28" y="236" width="336" height="340"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vRr-7m-iki" userLabel="ImgC3">
                                 <rect key="frame" x="250" y="459" width="96" height="90"/>
-                                <color key="backgroundColor" red="0.94265545620000002" green="0.55075643379999994" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="JX1-L1-idj"/>
@@ -148,7 +152,7 @@
                             </imageView>
                             <imageView clipsSubviews="YES" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FM0-se-F4R" userLabel="ImgC2">
                                 <rect key="frame" x="149.66666666666666" y="459" width="96" height="90"/>
-                                <color key="backgroundColor" red="0.94265545620000002" green="0.55075643379999994" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="XNc-MN-pqY"/>
@@ -160,7 +164,7 @@
                             </imageView>
                             <imageView clipsSubviews="YES" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oJa-Ob-qcK" userLabel="ImgC1">
                                 <rect key="frame" x="47" y="459" width="96" height="90"/>
-                                <color key="backgroundColor" red="0.94265545620000002" green="0.55075643379999994" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="czb-20-Uo6"/>
@@ -172,7 +176,7 @@
                             </imageView>
                             <imageView clipsSubviews="YES" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6yI-gW-Pac" userLabel="ImgB3">
                                 <rect key="frame" x="249" y="361" width="97" height="90"/>
-                                <color key="backgroundColor" red="0.94265545620000002" green="0.55075643379999994" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="KmB-vO-uIV"/>
@@ -183,7 +187,7 @@
                             </imageView>
                             <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2fj-x0-4W4" userLabel="ImgB2">
                                 <rect key="frame" x="149" y="361" width="96" height="90"/>
-                                <color key="backgroundColor" red="0.94265545620000002" green="0.55075643379999994" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="XDJ-4C-eqg"/>
@@ -195,7 +199,7 @@
                             </imageView>
                             <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lVA-Ie-1jZ" userLabel="ImgB1">
                                 <rect key="frame" x="47" y="361" width="96" height="90"/>
-                                <color key="backgroundColor" red="0.94265545620000002" green="0.55075643379999994" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="15a-t9-mGB"/>
@@ -207,7 +211,7 @@
                             </imageView>
                             <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FE4-BP-dnW" userLabel="ImgA3">
                                 <rect key="frame" x="249" y="261" width="96" height="90"/>
-                                <color key="backgroundColor" red="0.94265545620000002" green="0.55075643379999994" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="Ep5-A7-hIZ"/>
@@ -217,9 +221,9 @@
                                     <outletCollection property="gestureRecognizers" destination="ric-7P-un6" appends="YES" id="g9b-jy-MC2"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HPw-wf-RqB">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HPw-wf-RqB" userLabel="ImgA1">
                                 <rect key="frame" x="47" y="261" width="96" height="90"/>
-                                <color key="backgroundColor" red="0.94265545620000002" green="0.55075643379999994" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="PWf-wD-5a4"/>
@@ -229,9 +233,9 @@
                                     <outletCollection property="gestureRecognizers" destination="Fvi-2v-PKM" appends="YES" id="lW0-nE-O4B"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="96n-Pf-fDn">
+                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="96n-Pf-fDn" userLabel="ImgA2">
                                 <rect key="frame" x="148.66666666666666" y="261" width="96" height="90"/>
-                                <color key="backgroundColor" red="0.94265545620000002" green="0.55075643379999994" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="aM8-cT-Cqb"/>
@@ -277,8 +281,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="xOt-T1-UGX"/>
                     <connections>
-                        <outlet property="ImgCollection" destination="vRr-7m-iki" id="ilu-mQ-476"/>
                         <outlet property="lblCurrentPlayer" destination="852-l5-jso" id="gH4-Ki-Mbs"/>
+                        <outletCollection property="imgCollection" destination="HPw-wf-RqB" collectionClass="NSMutableArray" id="f7a-PM-IuN"/>
+                        <outletCollection property="imgCollection" destination="96n-Pf-fDn" collectionClass="NSMutableArray" id="WW5-hx-XFm"/>
+                        <outletCollection property="imgCollection" destination="FE4-BP-dnW" collectionClass="NSMutableArray" id="wEU-6c-bM0"/>
+                        <outletCollection property="imgCollection" destination="lVA-Ie-1jZ" collectionClass="NSMutableArray" id="Qg3-15-5Bz"/>
+                        <outletCollection property="imgCollection" destination="2fj-x0-4W4" collectionClass="NSMutableArray" id="1GS-lv-17H"/>
+                        <outletCollection property="imgCollection" destination="6yI-gW-Pac" collectionClass="NSMutableArray" id="kna-7J-di4"/>
+                        <outletCollection property="imgCollection" destination="oJa-Ob-qcK" collectionClass="NSMutableArray" id="Y17-yo-bri"/>
+                        <outletCollection property="imgCollection" destination="FM0-se-F4R" collectionClass="NSMutableArray" id="WQo-mc-gmL"/>
+                        <outletCollection property="imgCollection" destination="vRr-7m-iki" collectionClass="NSMutableArray" id="v92-yL-Lxe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5Y-a4-cUk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -328,28 +340,29 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1930.534351145038" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="3783.969465648855" y="-27.464788732394368"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Glj-Bb-pym">
+        <scene sceneID="6MK-y9-sK5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yFv-BM-yLY" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MNu-jJ-8BX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BSh-Ux-coO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iCw-9I-4y0">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6Qs-8f-78P"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yAf-9E-QsG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fVx-No-wKC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zff-WA-rTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96.946564885496173" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1907.6335877862596" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ultimate-tic-tac-toe12-01" width="340" height="340"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
