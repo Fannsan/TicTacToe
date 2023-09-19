@@ -14,55 +14,18 @@ class SecondViewController: UIViewController {
     @IBOutlet var imgCollection: [UIImageView]!
     
     
+    @IBOutlet weak var btnPlayAgain: UIButton!
     
     @IBOutlet weak var lblCurrentPlayer: UILabel!
     
     var game : Game?
     
-    var currentPlayer = 1
-    
-    var board = [0,0,0,0,0,0,0,0,0]
-    
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    }
-    
-    //Create a function to check who is the winner
-    func checkWinner() -> Bool{
-     
-        //check horisontal wins
-        if board[0] != 0 && board[0] == board [1] && board[1] == board[2]{
-            return true
-        }
-        
-        if board[3] != 0 && board[3] == board [4] && board[4] == board[5]{
-            return true
-        }
-        
-        if board[6] != 0 && board[6] == board [7] && board[7] == board[8]{
-            return true
-        }
-        //check vertical wins
-        if board[0] != 0 && board[0] == board [3] && board[3] == board[6]{
-            return true
-        }
-        if board[1] != 0 && board[1] == board [4] && board[4] == board[7]{
-            return true
-        }
-        if board[2] != 0 && board[2] == board [5] && board[5] == board[8]{
-            return true
-        }
-        //Diagonall wins
-        if board[0] != 0 && board[0] == board [4] && board[4] == board[8]{
-            return true
-        }
-        if board[2] != 0 && board[2] == board [4] && board[4] == board[6]{
-            return true
-        }
-        
-        return false
+        game = Game()
     }
     
 
@@ -75,41 +38,81 @@ class SecondViewController: UIViewController {
         guard let tag = sender.view?.tag else {return}
     
         //Check if imageView is empty
-        if attachedImageView.image == UIImage(systemName: "") && board[tag] == 0{
+        guard attachedImageView.image == UIImage(systemName: "circle.fill") && game?.board[tag] == 0 else {
+        
+            print ("spot is taken")
+            return
+        }
+        
+        //trying to call the function to check if board is full
+        if game?.isBoardFull() ?? true {
+            print("Board is full")
+            game?.reset()
             
-            if currentPlayer == 1{
+            btnPlayAgain.isHidden = true
+            
+            for imageView in imgCollection {
+                
+                imageView.image = UIImage(systemName: "circle.fill")
+            }
+            
+            return
+        }
+        
+            
+            //check if currentplayer is 1 in that case change picture to an x
+            if game?.currentPlayer == 1{
                 attachedImageView.image = UIImage(systemName: "xmark")
-                board[tag] = 1
+               //set the tagged index in my board to 1 when player 1 has placed a x
+                game?.board[tag] = 1
             
+                //if currentplayer is not 1 change picture to circle
                     }else {
                         attachedImageView.image = UIImage(systemName: "circle")
-                        board[tag] = 2
+                        game?.board[tag] = 2
+                        game?.currentPlayer = 2
                         }
             
-                print(board)
+            print(game?.board)
             
-          
+            
     
-            if checkWinner(){
+            if game?.checkWinner() ?? false{
               
-                print("player \(currentPlayer) wins!")
+                   
+                print("player \(String(describing: game?.currentPlayer)) wins!")
+                
+                //make the play again buttun apper
+                btnPlayAgain.isHidden = false
                 
                 //make an alert to show the winner and to reset the game
-                
 
                     }  else {
-                    currentPlayer = 3 - currentPlayer
-                    lblCurrentPlayer.text = currentPlayer.formatted()
+                     //check currentplayer and change it
+                        game?.switchPlayer(index: 0)
+                        
+                        lblCurrentPlayer.text = "Player \(game?.currentPlayer ?? 1)"
                     }
-
-            } else{
-            //board is full
-            print("board is full or spot is taken")
-           
         }
-
-    }
     
+    
+    
+    //play again to restart the game
+    @IBAction func playAgain(_ sender: Any) {
+        
+        
+        btnPlayAgain.isHidden = true
+        
+        //call the reset function from the game class
+        game?.reset()
+        
+        //sett all the images in my collection to the deafult value of "circle.fill"
+        for imageView in imgCollection {
+            
+            imageView.image = UIImage(systemName: "circle.fill")
+        }
+        
+    }
     
     
     
