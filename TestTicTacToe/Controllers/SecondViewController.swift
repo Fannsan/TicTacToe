@@ -18,14 +18,14 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var lblCurrentPlayer: UILabel!
     
-    var game : Game?
+    var game = Game()
     
    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        game = Game()
+        //game = Game()
     }
     
 
@@ -37,50 +37,42 @@ class SecondViewController: UIViewController {
        
         guard let tag = sender.view?.tag else {return}
     
+        
+        
+   
+        
+        
         //Check if imageView is empty
-        guard attachedImageView.image == UIImage(systemName: "circle.fill") && game?.board[tag] == 0 else {
+        guard attachedImageView.image == UIImage(systemName: "circle.fill") && game.board[tag] == 0 else {
         
             print ("spot is taken")
             return
         }
         
-        //trying to call the function to check if board is full
-        if game?.isBoardFull() ?? true {
-            print("Board is full")
-            game?.reset()
-            
-            btnPlayAgain.isHidden = true
-            
-            for imageView in imgCollection {
-                
-                imageView.image = UIImage(systemName: "circle.fill")
-            }
-            
-            return
-        }
+      
         
             
             //check if currentplayer is 1 in that case change picture to an x
-            if game?.currentPlayer == 1{
+            if game.currentPlayer == 1{
                 attachedImageView.image = UIImage(systemName: "xmark")
                //set the tagged index in my board to 1 when player 1 has placed a x
-                game?.board[tag] = 1
+                game.board[tag] = 1
             
                 //if currentplayer is not 1 change picture to circle
                     }else {
                         attachedImageView.image = UIImage(systemName: "circle")
-                        game?.board[tag] = 2
-                        game?.currentPlayer = 2
+                        game.board[tag] = 2
+                        game.currentPlayer = 2
                         }
             
-            print(game?.board)
+            print(game.board)
             
             
-    
-            if game?.checkWinner() ?? false{
+       //call the function checkWinner from the Game class and controlling so its not nil/false
+            if game.checkWinner(){
               
                    
-                print("player \(String(describing: game?.currentPlayer)) wins!")
+                print("player \(String(describing: game.currentPlayer)) wins!")
                 
                 //make the play again buttun apper
                 btnPlayAgain.isHidden = false
@@ -89,10 +81,27 @@ class SecondViewController: UIViewController {
 
                     }  else {
                      //check currentplayer and change it
-                        game?.switchPlayer(index: 0)
+                        game.switchPlayer(index: 0)
                         
-                        lblCurrentPlayer.text = "Player \(game?.currentPlayer ?? 1)"
+                        lblCurrentPlayer.text = "Player \(game.currentPlayer)"
                     }
+        
+        
+        //trying to call the function to check if board is full
+        if game.isBoardFull() {
+            print("Board is full")
+          
+            
+            //btnPlayAgain.isHidden = true
+           game.reset()
+            for imageView in imgCollection {
+                
+                imageView.image = UIImage(systemName: "circle.fill")
+            }
+            
+            return
+        }
+        
         }
     
     
@@ -104,7 +113,7 @@ class SecondViewController: UIViewController {
         btnPlayAgain.isHidden = true
         
         //call the reset function from the game class
-        game?.reset()
+        game.reset()
         
         //sett all the images in my collection to the deafult value of "circle.fill"
         for imageView in imgCollection {
@@ -117,3 +126,5 @@ class SecondViewController: UIViewController {
     
     
 }
+
+//ändra så att index blir ändrat direkt när man trycker på knappen 

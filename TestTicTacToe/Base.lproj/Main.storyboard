@@ -355,12 +355,12 @@
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="v16-6f-mld" userLabel="TapC2">
                     <connections>
-                        <action selector="tapped:" destination="dI6-C0-WXC" id="Cao-OU-EFs"/>
+                        <action selector="tapped:" destination="dI6-C0-WXC" id="Jwt-7G-P4j"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="miK-7z-y5a" userLabel="TapC3">
                     <connections>
-                        <action selector="tapped:" destination="dI6-C0-WXC" id="u6A-zm-Yr6"/>
+                        <action selector="tapped:" destination="dI6-C0-WXC" id="m02-TQ-OWY"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

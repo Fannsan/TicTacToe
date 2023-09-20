@@ -87,8 +87,10 @@ class Game{
     
    func isBoardFull() -> Bool{
        for i in board{
+    
            if i == 0 {
-               //there ar empty spots still on the board
+               
+               //there are empty spots still on the board
                return false
            }
        }
