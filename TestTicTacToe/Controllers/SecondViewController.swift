@@ -13,6 +13,7 @@ class SecondViewController: UIViewController {
 
     @IBOutlet var imgCollection: [UIImageView]!
     
+    @IBOutlet weak var lblPlayerTurn: UILabel!
     
     @IBOutlet weak var btnPlayAgain: UIButton!
     
@@ -20,111 +21,135 @@ class SecondViewController: UIViewController {
     
     var game = Game()
     
+    var playerOneName : String?
+    var playerTwoName : String?
+    
+    
    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //game = Game()
+        lblCurrentPlayer.text = "Player \(game.currentPlayer)"
+        
+     
+        setUpPlayers()
+        
+    }
+    
+    func setUpPlayers(){
+        
+        guard let playerOneName = playerOneName, let playerTwoName = playerTwoName else{
+            print("No players found")
+            return
+        }
+        
+        //creating a new variable of playerOne ta add the name and the start score
+        let newPlayer1 = Player(name: playerOneName, score: 0)
+        let newPlayer2 = Player(name: playerTwoName, score: 0)
+        
+        game.addPlayer(newPlayer: newPlayer1)
+        game.addPlayer(newPlayer: newPlayer2)
+    
+        game.printPlayers()
     }
     
 
     
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {
-       
+        
         //fetching the imageView
         guard let attachedImageView = sender.view as? UIImageView else {return}
-       
+        
         guard let tag = sender.view?.tag else {return}
-    
-        
-        
-   
-        
         
         //Check if imageView is empty
         guard attachedImageView.image == UIImage(systemName: "circle.fill") && game.board[tag] == 0 else {
-        
-            print ("spot is taken")
+            
             return
         }
         
-      
         
+        //check if currentplayer is 1 in that case change picture to an x
+        if game.currentPlayer == 1{
+            attachedImageView.image = UIImage(systemName: "xmark")
+            //set the tagged index in my board to 1 when player 1 has placed a x
+            game.board[tag] = 1
             
-            //check if currentplayer is 1 in that case change picture to an x
-            if game.currentPlayer == 1{
-                attachedImageView.image = UIImage(systemName: "xmark")
-               //set the tagged index in my board to 1 when player 1 has placed a x
-                game.board[tag] = 1
+            //if currentplayer is not 1 change picture to circle
+        }else {
+            attachedImageView.image = UIImage(systemName: "circle")
+            game.board[tag] = 2
+            game.currentPlayer = 2
+        }
+        
+        print(game.board)
+        
+        
+        //call the function checkWinner from the Game class and controlling so its not nil/false
+        if game.checkWinner(){
             
-                //if currentplayer is not 1 change picture to circle
-                    }else {
-                        attachedImageView.image = UIImage(systemName: "circle")
-                        game.board[tag] = 2
-                        game.currentPlayer = 2
-                        }
+            lblPlayerTurn.text = "Player \(game.currentPlayer) Wins!"
             
-            print(game.board)
+            lblCurrentPlayer.isHidden = true
+            print("player \(String(describing: game.currentPlayer)) wins!")
             
-            
-       //call the function checkWinner from the Game class and controlling so its not nil/false
-            if game.checkWinner(){
-              
-                   
-                print("player \(String(describing: game.currentPlayer)) wins!")
-                
-                //make the play again buttun apper
-                btnPlayAgain.isHidden = false
-                
-                //make an alert to show the winner and to reset the game
+            //make the play again button apper
+            btnPlayAgain.isHidden = false
+           
+            for imageView in imgCollection{
+                imageView.isUserInteractionEnabled = false
 
-                    }  else {
-                     //check currentplayer and change it
-                        game.switchPlayer(index: 0)
-                        
-                        lblCurrentPlayer.text = "Player \(game.currentPlayer)"
-                    }
-        
-        
-        //trying to call the function to check if board is full
-        if game.isBoardFull() {
-            print("Board is full")
-          
-            
-            //btnPlayAgain.isHidden = true
-           game.reset()
-            for imageView in imgCollection {
-                
-                imageView.image = UIImage(systemName: "circle.fill")
             }
             
             return
+            
+        }  else {
+            //check currentplayer and change it
+            game.switchPlayer()
+            lblCurrentPlayer.text = "Player \(game.checkName())"
+            
         }
         
+        
+        
+        //call the function to check if board is full
+        if game.isBoardFull() {
+           
+            lblPlayerTurn.text = "The board is full, try again!"
+            lblCurrentPlayer.isHidden = true
+            //make the play again button apper
+            btnPlayAgain.isHidden = false
+            return
         }
+        
+    }
+    
     
     
     
     //play again to restart the game
     @IBAction func playAgain(_ sender: Any) {
         
-        
         btnPlayAgain.isHidden = true
+        lblPlayerTurn.text = "Player turn:"
+        lblCurrentPlayer.isHidden = false
+        
         
         //call the reset function from the game class
         game.reset()
+        
+        lblCurrentPlayer.text = "Player \(game.currentPlayer)"
         
         //sett all the images in my collection to the deafult value of "circle.fill"
         for imageView in imgCollection {
             
             imageView.image = UIImage(systemName: "circle.fill")
+            imageView.isUserInteractionEnabled = true
         }
-        
     }
     
     
     
 }
 
-//ändra så att index blir ändrat direkt när man trycker på knappen 

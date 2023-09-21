@@ -9,7 +9,7 @@ import Foundation
 
 class Game{
     
-    private var players:[Player]
+private var players:[Player]
     
  var board = [0,0,0,0,0,0,0,0,0]
     
@@ -22,7 +22,7 @@ class Game{
     }
     
     
-    func switchPlayer(index: Int) {
+    func switchPlayer() {
         
         if currentPlayer == 1{
             currentPlayer = 2
@@ -37,7 +37,23 @@ class Game{
         //get the name from the view and add in to the array of players
         players.append(newPlayer)
         
-       
+    }
+    
+    // I want get the name of the player if it is currentplayer 1 or 2
+    func checkName() -> String? {
+            if currentPlayer == 1 {
+                
+                return players[0].name
+            }else{
+                
+                return players[1].name
+            }
+            
+    }
+    
+    
+    func setScore(){
+        
     }
     
     
@@ -47,6 +63,8 @@ class Game{
             print(player.name)
         }
     }
+    
+    
     
     //Create a function to check who is the winner
     public func checkWinner() -> Bool{
@@ -103,9 +121,8 @@ class Game{
         
         //changing my array so it is filled with 0 and is the lenght of the board
         board = Array(repeating: 0, count: board.count)
-           
         currentPlayer = 1
-        
+     
     }
 
 }
