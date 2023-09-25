@@ -30,10 +30,13 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        lblCurrentPlayer.text = "Player \(game.currentPlayer)"
+        setUpPlayers()
+        
+        
+        lblCurrentPlayer.text = "Player \(playerOneName!)"
         
      
-        setUpPlayers()
+        
         
     }
     
@@ -58,6 +61,7 @@ class SecondViewController: UIViewController {
     
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {
         
+        
         //fetching the imageView
         guard let attachedImageView = sender.view as? UIImageView else {return}
         
@@ -69,6 +73,7 @@ class SecondViewController: UIViewController {
             return
         }
         
+    
         
         //check if currentplayer is 1 in that case change picture to an x
         if game.currentPlayer == 1{
@@ -89,10 +94,10 @@ class SecondViewController: UIViewController {
         //call the function checkWinner from the Game class and controlling so its not nil/false
         if game.checkWinner(){
             
-            lblPlayerTurn.text = "Player \(game.currentPlayer) Wins!"
+            lblPlayerTurn.text = "Player \(game.checkName()!) Wins!"
             
             lblCurrentPlayer.isHidden = true
-            print("player \(String(describing: game.currentPlayer)) wins!")
+            print("player \(game.checkName()!) wins!")
             
             //make the play again button apper
             btnPlayAgain.isHidden = false
@@ -105,9 +110,12 @@ class SecondViewController: UIViewController {
             return
             
         }  else {
+           
             //check currentplayer and change it
             game.switchPlayer()
-            lblCurrentPlayer.text = "Player \(game.checkName())"
+            lblCurrentPlayer.text = "Player \(game.checkName()!)"
+            
+           
             
         }
         

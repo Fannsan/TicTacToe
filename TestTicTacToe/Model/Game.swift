@@ -124,5 +124,27 @@ private var players:[Player]
         currentPlayer = 1
      
     }
+    
+    
+    func computerPlayer(){
+        
+        guard let currentPlayerName = checkName(), currentPlayerName == "Computer" else {return}
+            
+        
+        //finds the empty spots on the board and filter them out to a emptySpots array
+        let emptySpots = board.indices.filter{board[$0] == 0}
+        
+        if !emptySpots.isEmpty{
+            
+            let randomIndex = Int.random(in: 0..<emptySpots.count)
+            let chosenIndex = emptySpots[randomIndex]
+            
+            board[chosenIndex] = 2
+        }
+       
+      }
 
 }
+
+
+
