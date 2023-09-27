@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        switchToComputer.isOn = false
     }
     
     
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
             txtPlayer2.isHidden = true
             lblPlayerTwo.isHidden = true
             
-            txtPlayer2.text = "Computer"
+           // txtPlayer2.text = "Computer"
             
         } else{
             txtPlayer2.isHidden = false
@@ -64,6 +64,7 @@ class ViewController: UIViewController {
         //checking if the switch is on and setting the name "computer" to player two
         if switchToComputer.isOn{
             playerTwo = "Computer"
+            
         } else{
             // Check if txtPlayer2 is empty or contains "Computer"
                 let enteredPlayerTwo = txtPlayer2.text
